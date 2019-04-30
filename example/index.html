@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>v-tag</title>
+    <meta name="description" content="a v-tag sample">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="text-align:center;">
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <h1 style="text-align: center;">a v-tag sample</h1>
+    <main id="app" style="display: flex;justify-content: space-between;align-items: center;">
+        <section>
+            <label>category</label>
+            <input type="text" v-model.trim="category">
+        </section>
+        <section>
+            <label>action</label>
+            <input type="text" v-model.trim="action">
+        </section>
+        <section>
+            <label>label</label>
+            <input type="text" v-model.trim="label">
+        </section>
+        <section>
+            <label>value</label>
+            <input type="text" v-model.trim="value">
+        </section>
+    </main>
+    <button style="margin: 20px auto;font-size: 16px;cursor: pointer;" v-tag="triggerGoogleTag" :tag-category="category"
+        :tag-action="action" :tag-label="label" :tag-value="value">triggerGTagFunction</button>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-135642343-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-135642343-1');
+        </script>
+    <script src="../dist/main.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                category: '',
+                action: '',
+                label: '',
+                value: ''
+            },
+            methods: {
+                triggerGoogleTag() {
+                    gtag('event', this.action, {
+                        'event_category': this.category || undefined,
+                        'event_label': this.label || undefined,
+                        'value': this.value || undefined
+                    })
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

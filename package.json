@@ -1,0 +1,42 @@
+{
+  "name": "v-tag",
+  "version": "0.1.0",
+  "description": "a directive based on vue.js, it is best used with combination of Google Analysis",
+  "main": "./dist/main.js",
+  "scripts": {
+    "fix": "eslint --fix  --ext .js",
+    "lint": "eslint --ext .js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuanhuQiu/v-tag.git"
+  },
+  "keywords": [
+    "vue",
+    "google-analysis",
+    "track",
+    "directive",
+    "gtag"
+  ],
+  "author": "frankqiu18222954832@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/QuanhuQiu/v-tag/issues"
+  },
+  "homepage": "https://github.com/QuanhuQiu/v-tag#readme",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "clean-webpack-plugin": "^2.0.1",
+    "eslint": "^5.16.0",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  }
+}
