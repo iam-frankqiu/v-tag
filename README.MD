@@ -1,6 +1,6 @@
 # v-tag
 
-vue-infinite-scroll is an infinite scroll directive for vue.js.
+a directive based on vue.js, it is best used with combination of Google Analysis
 
 # Install
 
